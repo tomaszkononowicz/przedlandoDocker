@@ -1,0 +1,19 @@
+ID kategorii;Active (0/1);Nazwa;Nazwa nadrzędnej;Root category (0/1);Opis;Meta title;Meta keywords;Meta description;przyjazny URL;URL obrazka
+10;1;Koszulki;Mężczyźni;0;;;;;koszulki;http://localhost/img/categories/m/koszulki.jpg
+11;1;Kurtki;Mężczyźni;0;;;;;kurtki;http://localhost/img/categories/m/kurtki.jpg
+12;1;Płaszcze;Mężczyźni;0;;;;;plaszcze;http://localhost/img/categories/m/plaszcze.jpg
+13;1;Bluzy i swetry;Mężczyźni;0;;;;;bluzyswetry;http://localhost/img/categories/m/bluzy i swetry.jpg
+14;1;Koszule;Mężczyźni;0;;;;;koszule;http://localhost/img/categories/m/koszule.jpg
+15;1;Jeansy;Mężczyźni;0;;;;;jeansy;http://localhost/img/categories/m/jeansy.jpg
+16;1;Spodnie;Mężczyźni;0;;;;;spodnie;http://localhost/img/categories/m/spodnie.jpg
+17;1;Garnitury;Mężczyźni;0;;;;;garnitury;http://localhost/img/categories/m/garnitury.jpg
+18;1;Odzież sportowa;Mężczyźni;0;;;;;sportowa;http://localhost/img/categories/m/odziez sportowa.jpg
+19;1;Koszulki;Kobiety;0;;;;;koszulki;http://localhost/img/categories/w/koszulki.jpg
+20;1;Kurtki;Kobiety;0;;;;;kurtki;http://localhost/img/categories/w/kurtki.jpg
+21;1;Bluzki i koszule;Kobiety;0;;;;;bluzkikoszule;http://localhost/img/categories/w/bluzy.jpg
+22;1;Swetry;Kobiety;0;;;;;swetry;http://localhost/img/categories/w/swetry.jpg
+23;1;Jeansy;Kobiety;0;;;;;jeansy;http://localhost/img/categories/w/jeansy.jpg
+24;1;Spodnie;Kobiety;0;;;;;spodnie;http://localhost/img/categories/w/spodnie.jpg
+25;1;Sukienki;Kobiety;0;;;;;sukienki;http://localhost/img/categories/w/sukienki.jpg
+26;1;Spódniczki;Kobiety;0;;;;;spodniczki;http://localhost/img/categories/w/spodnice.jpg
+27;1;Odzież sportowa;Kobiety;0;;;;;sportowa;http://localhost/img/categories/w/odziez sportowa.jpg

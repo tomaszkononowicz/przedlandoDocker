@@ -1,0 +1,24 @@
+version: '2'
+services:
+ be-mysql:
+  image: be-mysql
+  container_name: be-mysql
+  restart: always
+  ports:
+  - "3306:3306"
+  environment:
+  - "MYSQL_ROOT_PASSWORD=pussyeater"
+  - "MYSQL_DATABASE=prestashopmysql"
+  build: ./be-mysql
+ be-prestashop:
+  image: be-prestashop
+  container_name: be-prestashop
+  restart: always
+  ports:
+  - "80:80"
+  environment:
+  - "DB_SERVER=be-mysql"
+  - "PS_INSTALL_AUTO=1"
+  links: 
+  - "be-mysql"
+  build: ./be-prestashop
