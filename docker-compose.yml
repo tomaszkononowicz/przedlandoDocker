@@ -20,5 +20,16 @@ services:
   - "DB_SERVER=be-mysql"
   - "PS_INSTALL_AUTO=1"
   links: 
-  - "be-mysql"
+  - be-mysql
   build: ./be-prestashop
+ be-java:
+  image: be-java
+  container_name: be-java
+  ports:
+  - "8080:8080"
+  tty: true
+  restart: always
+  build: ./be-java
+  links:
+  - be-mysql
+  - be-prestashop

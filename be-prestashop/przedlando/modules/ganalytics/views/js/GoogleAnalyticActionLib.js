@@ -154,8 +154,10 @@ var GoogleAnalyticEnhancedECommerce = {
 	},
 
 	addTransaction: function(Order) {
-
-		//this.add(Product); //odkomentowane
+		ga('ec:setAction', 'checkout', {
+			'step': 5
+		});
+	ga('send', 'event', 'Transakcja', 'Potwierdzenie zamówienia');
 		ga('ec:setAction', 'purchase', Order);
 		ga('send', 'event','Transakcja','Potwierdzenie zamówienia', 'Całkowity koszt ' + Order.revenue, {
 			'hitCallback': function() {
@@ -180,7 +182,5 @@ var GoogleAnalyticEnhancedECommerce = {
 		ga('send', 'event', 'Transakcja', 'Adres wysyłki');
 	else if(Step ==2)
 		ga('send', 'event', 'Transakcja', 'Sposób dostawy');
-	else if(Step ==3)
-		ga('send', 'event', 'Transakcja', 'Metoda płatności');
 	}
 };

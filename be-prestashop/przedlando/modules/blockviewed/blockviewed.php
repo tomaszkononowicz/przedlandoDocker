@@ -72,7 +72,19 @@ class BlockViewed extends Module
 
 	public function hookRightColumn($params)
 	{
-		$productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, Configuration::get('PRODUCTS_VIEWED_NBR')) : array();
+		#$productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, Configuration::get('PRODUCTS_VIEWED_NBR')) : array();
+
+
+		$productsViewed;
+		$id = (int)$this->context->customer->id;
+		$url = 'http://be-java:8080/reccommendation/geteasybyid/' . $id;
+		$json = file_get_contents($url);
+		$data = json_decode($json, TRUE);
+		$id1 = $data[0];
+		$id2 = $data[1];
+		$id3 = $data[2];
+		$productsViewed = [$id1, $id2, $id3];
+
 
 		if (count($productsViewed))
 		{

@@ -1,0 +1,13 @@
+pl\kononowicz\biznes\app\CountedUserRatings.class
+pl\kononowicz\biznes\app\IProductCommentDAO.class
+pl\kononowicz\biznes\app\IProductCommentService.class
+pl\kononowicz\biznes\BiznesApplication.class
+pl\kononowicz\biznes\app\CountedUserRatingsRowMapper.class
+pl\kononowicz\biznes\app\ProductCommentService.class
+pl\kononowicz\biznes\app\ProductComment.class
+pl\kononowicz\biznes\app\ProductCommentDAO.class
+pl\kononowicz\biznes\app\MainController.class
+pl\kononowicz\biznes\app\Author.class
+pl\kononowicz\biznes\app\AuthorRepository.class
+pl\kononowicz\biznes\app\ProductCommentRepository.class
+pl\kononowicz\biznes\app\ProductCommentRowMapper.class

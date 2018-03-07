@@ -264,7 +264,6 @@ class Ganalytics extends Module
 				})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');
 				ga(\'create\', \''.Tools::safeOutput(Configuration::get('GA_ACCOUNT_ID')).'\', \'auto\');
 				ga(\'require\', \'displayfeatures\');
-				ga(\'send\', \'pageview\');
 				ga(\'require\', \'ec\');
 				ga(\'set\', \'displayFeaturesTask\', \'null\');'
 				.(($user_id && !$back_office) ? 'ga(\'set\', \'&uid\', \''.$user_id.'\');': '')

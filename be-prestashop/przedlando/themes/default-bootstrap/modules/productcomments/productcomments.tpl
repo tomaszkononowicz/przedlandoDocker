@@ -88,7 +88,7 @@
 			{/foreach}
 			{if (!$too_early AND ($is_logged OR $allow_guests))}
 			<p class="align_center">
-				<a id="new_comment_tab_btn" class="btn btn-default button button-small open-comment-form" href="#new_comment_form">
+				<a id="new_comment_tab_btn" class="btn btn-default button button-small open-comment-form" href="#new_comment_form" onclick="timing('s');">
 					<span>{l s='Write your review!' mod='productcomments'}</span>
 				</a>
 			</p>
@@ -96,7 +96,7 @@
 		{else}
 			{if (!$too_early AND ($is_logged OR $allow_guests))}
 			<p class="align_center">
-				<a id="new_comment_tab_btn" class="btn btn-default button button-small open-comment-form" href="#new_comment_form">
+				<a id="new_comment_tab_btn" class="btn btn-default button button-small open-comment-form" href="#new_comment_form" onclick="timing('s');">
 					<span>{l s='Be the first to write your review!' mod='productcomments'}</span>
 				</a>
 			</p>
@@ -110,7 +110,7 @@
 <!-- Fancybox -->
 <div style="display: none;">
 	<div id="new_comment_form">
-		<form id="id_new_comment_form" action="#">
+		<form id="id_new_comment_form" action="#" onsubmit="timing('e');">
 			<h2 class="page-subheading">
 				{l s='Write a review' mod='productcomments'}
 			</h2>
@@ -134,36 +134,33 @@
 						<ul id="criterions_list">
 						{foreach from=$criterions item='criterion'}
 							<li>
-								<label>{$criterion.name|escape:'html':'UTF-8'}:</label>
+								<label>Oceń </label>
 								<div class="star_content">
 									<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_comment_criterion|round}]" value="1" />
 									<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_comment_criterion|round}]" value="2" />
 									<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_comment_criterion|round}]" value="3" />
-									<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_comment_criterion|round}]" value="4" checked="checked" />
-									<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_comment_criterion|round}]" value="5" />
+									<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_comment_criterion|round}]" value="4" />
+									<input class="star not_uniform" type="radio" name="criterion[{$criterion.id_product_comment_criterion|round}]" value="5" checked="checked"/>
 								</div>
 								<div class="clearfix"></div>
 							</li>
 						{/foreach}
 						</ul>
 					{/if}
-					<label for="comment_title">
-						{l s='Title:' mod='productcomments'} <sup class="required">*</sup>
-					</label>
-					<input id="comment_title" name="title" type="text" value=""/>
+					<input id="comment_title" name="title" value=" " type="hidden"/>
 					<label for="content">
-						{l s='Comment:' mod='productcomments'} <sup class="required">*</sup>
+						{l s='Comment:' mod='productcomments'}
 					</label>
-					<textarea id="content" name="content"></textarea>
+					<textarea id="content" name="content"> </textarea>
 					{if $allow_guests == true && !$is_logged}
 						<label>
-							{l s='Your name:' mod='productcomments'} <sup class="required">*</sup>
+							{l s='Your name:' mod='productcomments'}
 						</label>
-						<input id="commentCustomerName" name="customer_name" type="text" value=""/>
+						<input id="commentCustomerName" name="customer_name" type="text" value="Anonim"/>
 					{/if}
 					<div id="new_comment_form_footer">
 						<input id="id_product_comment_send" name="id_product" type="hidden" value='{$id_product_comment_form}' />
-						<p class="fl required"><sup>*</sup> {l s='Required fields' mod='productcomments'}</p>
+						
 						<p class="fr">
 							<button id="submitNewMessage" name="submitMessage" type="submit" class="btn button button-small">
 								<span>{l s='Submit' mod='productcomments'}</span>
@@ -193,3 +190,21 @@
 {addJsDefL name=productcomment_title}{l s='New comment' mod='productcomments' js=1}{/addJsDefL}
 {addJsDefL name=productcomment_ok}{l s='OK' mod='productcomments' js=1}{/addJsDefL}
 {/strip}
+
+<script>
+function timing(option){
+var time1 = 0;
+	var time2 = -10;
+	if(option == 's')
+		time1 = performance.now();
+	else if(option == 'e'){
+	time2 = (performance.now()-time1);
+	ga('send', 'timing', 'Ocenianie', 'Czas wprowadzenia oceny', time2, {
+			'nonInteraction': 1,
+			'hitCallback': function() {
+				return !ga.loaded;
+			}
+		});
+}
+}
+</script>

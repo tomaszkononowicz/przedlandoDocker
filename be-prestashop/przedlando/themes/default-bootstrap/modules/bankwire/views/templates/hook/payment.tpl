@@ -34,7 +34,9 @@
 <script type="text/javascript">
     function theFunction (event) {
 	event.preventDefault();
-	ga('ec:setAction', 'checkout');
+	ga('ec:setAction', 'checkout', {
+			'step': 4
+		});
 	ga('send', 'event', 'Transakcja', 'Płatność', { 
 		hitCallback: function() {
       				window.location.href= "/module/bankwire/payment";
